@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Grid, Box, Card, Typography, Stack } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import PageContainer from 'src/components/container/PageContainer';
@@ -56,9 +56,9 @@ const Register = () => {
     }
   }, [navigate, userInfo]);
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-  };
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  // };
 
   const handleSubmit = async ({ name, email, password, confirm_password, role }) => {
     if (password !== confirm_password) {

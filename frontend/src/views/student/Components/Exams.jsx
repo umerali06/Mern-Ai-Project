@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import PageContainer from 'src/components/container/PageContainer';
 import BlankCard from '../../../components/shared/BlankCard';
 import ExamCard from './ExamCard';
@@ -8,16 +8,26 @@ import { useGetExamsQuery } from 'src/slices/examApiSlice';
 const Exams = () => {
   // Fetch exam data from the backend using useGetExamsQuery
   const { data: userExams, isLoading, isError, refetch } = useGetExamsQuery();
+
   useEffect(() => {
-    refetch();
-  }, []);
-  console.log('Exam USer ', userExams);
+    refetch(); // Fetch exams data when the component mounts
+  }, [refetch]);
+
+  console.log('Exam User Data:', userExams);
+
+  // Handle loading state
   if (isLoading) {
-    return <div>Loading...</div>; // You can replace this with a loading spinner component
+    return <div>Loading...</div>;
   }
 
+  // Handle error state
   if (isError) {
-    return <div>Error fetching exams.</div>; // You can handle errors more gracefully
+    return <div>Error fetching exams.</div>;
+  }
+
+  // Handle if no data is available
+  if (!userExams || userExams.length === 0) {
+    return <div>No exams available.</div>;
   }
 
   return (

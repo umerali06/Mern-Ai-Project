@@ -9,18 +9,19 @@ import {
   MenuItem,
   ListItemIcon,
   ListItemText,
-  Typography,
+  // Typography,
 } from '@mui/material';
 
 import { IconListCheck, IconMail, IconUser } from '@tabler/icons-react';
 
 import ProfileImg from 'src/assets/images/profile/user-1.jpg';
 
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { logout } from './../../../slices/authSlice';
 import { useLogoutMutation } from './../../../slices/usersApiSlice';
+import { useDispatch } from 'react-redux';
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -31,7 +32,7 @@ const Profile = () => {
     setAnchorEl2(null);
   };
 
-  const { userInfo } = useSelector((state) => state.auth);
+  // const { userInfo } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

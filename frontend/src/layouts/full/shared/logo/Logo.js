@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
 import { ReactComponent as LogoDark } from 'src/assets/images/logos/dark-logo.svg';
 import { styled } from '@mui/material';
 
@@ -14,7 +15,7 @@ const Logo = () => {
     <LinkStyled to="/">
       <LogoDark height={70} />
     </LinkStyled>
-  )
+  );
 };
 
 export default Logo;

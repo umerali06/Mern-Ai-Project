@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Container, Card, CardContent, Typography, Avatar, Grid, Divider } from '@mui/material';
 
 const ProfilePage = () => {
@@ -22,12 +22,12 @@ const ProfilePage = () => {
 
   return (
     <Container maxWidth="sm" style={{ marginTop: '2rem' }}>
-      <Card style={{ padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
+      <Card
+        style={{ padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
+      >
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} style={{ textAlign: 'center' }}>
-            <Avatar style={avatarStyles}>
-              {initialUserValues.name.charAt(0).toUpperCase()}
-            </Avatar>
+            <Avatar style={avatarStyles}>{initialUserValues.name.charAt(0).toUpperCase()}</Avatar>
           </Grid>
           <Grid item xs={12}>
             <Typography variant="h4" align="center" gutterBottom>
@@ -42,7 +42,9 @@ const ProfilePage = () => {
               <Typography variant="h6" color="textSecondary">
                 Role:
               </Typography>
-              <Typography variant="body1">{initialUserValues.role === 'student' ? 'Student' : 'Teacher'}</Typography>
+              <Typography variant="body1">
+                {initialUserValues.role === 'student' ? 'Student' : 'Teacher'}
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography variant="h6" color="textSecondary">

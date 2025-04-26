@@ -3,6 +3,13 @@ import { apiSlice } from './apiSlice';
 // Define the base URL for the exams API
 const EXAMS_URL = '/api/users';
 
+// Function to get the Authorization headers with the JWT token
+const getAuthHeaders = () => ({
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('authToken')}`, // Make sure 'authToken' is correctly stored in localStorage
+  },
+});
+
 // Inject endpoints for the exam slice
 export const examApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -11,6 +18,7 @@ export const examApiSlice = apiSlice.injectEndpoints({
       query: () => ({
         url: `${EXAMS_URL}/exam`,
         method: 'GET',
+        ...getAuthHeaders(), // Attach token to header
       }),
     }),
     // Create a new exam
@@ -19,6 +27,7 @@ export const examApiSlice = apiSlice.injectEndpoints({
         url: `${EXAMS_URL}/exam`,
         method: 'POST',
         body: data,
+        ...getAuthHeaders(), // Attach token to header
       }),
     }),
     // Get questions for a specific exam
@@ -26,6 +35,7 @@ export const examApiSlice = apiSlice.injectEndpoints({
       query: (examId) => ({
         url: `${EXAMS_URL}/exam/questions/${examId}`,
         method: 'GET',
+        ...getAuthHeaders(), // Attach token to header
       }),
     }),
     // Create a new question for an exam
@@ -34,6 +44,7 @@ export const examApiSlice = apiSlice.injectEndpoints({
         url: `${EXAMS_URL}/exam/questions`,
         method: 'POST',
         body: data,
+        ...getAuthHeaders(), // Attach token to header
       }),
     }),
   }),

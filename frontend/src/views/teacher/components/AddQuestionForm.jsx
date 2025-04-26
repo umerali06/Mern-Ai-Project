@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Box,
+  // Box,
   Button,
   TextField,
   FormControlLabel,
@@ -26,7 +26,7 @@ const AddQuestionForm = () => {
     setCorrectOptions(updatedCorrectOptions);
   };
 
-  const [createQuestion, { isLoading }] = useCreateQuestionMutation();
+  const [createQuestion] = useCreateQuestionMutation();
   const { data: examsData } = useGetExamsQuery();
 
   useEffect(() => {

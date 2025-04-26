@@ -1,12 +1,12 @@
 import {
-  IconAperture,
+  // IconAperture,
   IconCopy,
   IconLayoutDashboard,
   IconLogin,
   IconMoodHappy,
   IconTypography,
   IconUserPlus,
-  IconPlayerPlayFilled,
+  // IconPlayerPlayFilled,
 } from '@tabler/icons-react';
 
 import { uniqueId } from 'lodash';

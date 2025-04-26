@@ -1,19 +1,20 @@
-import express from "express";
 import dotenv from "dotenv";
-import cors from 'cors';
-import path from 'path';
+dotenv.config();
+import express from "express";
+import cors from "cors";
+import path from "path";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 import cookieParser from "cookie-parser";
 import examRoutes from "./routes/examRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-
-dotenv.config();
+console.log(process.env.PORT);
 connectDB();
 const app = express();
 const port = process.env.PORT || 5000;
 const corsOptions = {
-  origin: process.env.CORS_ALLOW_ORIGIN.split(',')
+  origin: "*",
+  Credential: true,
 };
 app.use(cors(corsOptions));
 // to parse req boy
@@ -49,7 +50,11 @@ app.use(errorHandler);
 
 // Server
 app.listen(port, () => {
-  console.log(`server is running on http://localhost:${port}, corsOptions: ${process.env.CORS_ALLOW_ORIGIN.split(',')}`);
+  console.log(
+    `server is running on http://localhost:${port}, corsOptions: ${process.env.CORS_ALLOW_ORIGIN.split(
+      ","
+    )}`
+  );
 });
 
 // Todos:

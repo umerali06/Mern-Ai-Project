@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Typography,
-  Button,
-  TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-} from '@mui/material';
+import { Box, Typography, Button, TextField } from '@mui/material';
 
 const CreateExam = ({ formik, title, subtitle, subtext }) => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = formik;

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 // mui imports
 import { ListSubheader, styled } from '@mui/material';
 
@@ -14,9 +15,7 @@ const NavGroup = ({ item }) => {
       padding: '3px 12px',
     }),
   );
-  return (
-    <ListSubheaderStyle>{item.subheader}</ListSubheaderStyle>
-  );
+  return <ListSubheaderStyle>{item.subheader}</ListSubheaderStyle>;
 };
 
 NavGroup.propTypes = {

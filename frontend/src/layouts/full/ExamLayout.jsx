@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { styled, Container, Box } from '@mui/material';
+import { styled, Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 import Header from './header/Header';
-import Sidebar from './sidebar/Sidebar';
+// import Sidebar from './sidebar/Sidebar';
 
-const MainWrapper = styled('div')(() => ({
-  // display: 'flex',
-  // minHeight: '100vh',
-  // width: '100%',
-}));
+// const MainWrapper = styled('div')(() => ({
+//   // display: 'flex',
+//   // minHeight: '100vh',
+//   // width: '100%',
+// }));
 
 const PageWrapper = styled('div')(() => ({
   // display: 'flex',
@@ -22,7 +22,7 @@ const PageWrapper = styled('div')(() => ({
 
 const ExamLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
-  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [setMobileSidebarOpen] = useState(false);
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
 
   return (

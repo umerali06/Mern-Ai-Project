@@ -5,14 +5,12 @@ import {
   Checkbox,
   FormControlLabel,
   List,
-  ListItem,
   ListItemText,
-  Radio,
   Stack,
   Typography,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
+
 import Paper from '@mui/material/Paper';
 import { uniqueId } from 'lodash';
 import * as React from 'react';
@@ -21,24 +19,24 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useGetQuestionsQuery } from 'src/slices/examApiSlice';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright(props) {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const DescriptionAndInstructions = () => {
   const navigate = useNavigate();
 
   const { examId } = useParams();
-  const { data: questions, isLoading } = useGetQuestionsQuery(examId); // Fetch questions using examId
+  const { data: questions } = useGetQuestionsQuery(examId); // Fetch questions using examId
   // const { data: questions, isLoading } = useGetQuestionsQuery({ examId });
 
   // fech exam data from backend

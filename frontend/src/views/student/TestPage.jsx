@@ -12,9 +12,9 @@ import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 const TestPage = () => {
-  const { examId, testId } = useParams();
+  const { examId } = useParams();
 
-  const [selectedExam, setSelectedExam] = useState([]);
+  const [setSelectedExam] = useState([]);
   const [examDurationInSeconds, setexamDurationInSeconds] = useState(0);
   const { data: userExamdata } = useGetExamsQuery();
 
@@ -26,7 +26,7 @@ const TestPage = () => {
       setSelectedExam(exam);
       setexamDurationInSeconds(exam[0].duration * 60);
     }
-  }, [userExamdata]);
+  }, [userExamdata, examId, setSelectedExam]); // Add examId and setSelectedExam in the dependency array
 
   const [questions, setQuestions] = useState([]);
   const { data, isLoading } = useGetQuestionsQuery(examId);
@@ -77,6 +77,7 @@ const TestPage = () => {
   const saveCheatingLog = async (cheatingLog) => {
     console.log(cheatingLog);
   };
+
   return (
     <PageContainer title="TestPage" description="This is TestPage">
       <Box pt="3rem">

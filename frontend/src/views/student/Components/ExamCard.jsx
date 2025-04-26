@@ -3,8 +3,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, Rating, Stack } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { CardActionArea, Stack } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const imgUrl =
   'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbXB1dGVyJTIwc2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80';
@@ -13,7 +13,10 @@ export default function ExamCard({ exam }) {
 
   // handling routes
   const navigate = useNavigate();
-  const isExamActive = true; // Date.now() >= liveDate && Date.now() <= deadDate;
+
+  // Check if the exam is active by comparing current date with live and dead dates
+  const isExamActive = Date.now() >= liveDate && Date.now() <= deadDate;
+
   const handleCardClick = () => {
     if (isExamActive) {
       // Navigate to the /exam/examId route when the exam is active

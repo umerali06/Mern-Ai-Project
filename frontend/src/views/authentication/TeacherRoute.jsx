@@ -1,5 +1,6 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import React from 'react';
 
 const TeacherRoute = () => {
   const { userInfo } = useSelector((state) => state.auth);
