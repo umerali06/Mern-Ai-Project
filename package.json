@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
-    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && concurrently \"npm run server\" \"npm run client\""
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && concurrently \"npm run server\" \"npm run client\"",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && nodemon backend/server.js"
   },
   "type": "module",
   "author": "",

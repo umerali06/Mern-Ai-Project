@@ -18,6 +18,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
+    "0_authentication_jwt": "file:..",
     "apexcharts": "3.41.0",
     "chance": "1.1.11",
     "formik": "^2.4.4",
@@ -49,7 +50,7 @@
     "prettier": "2.8.8"
   },
   "scripts": {
-   "start": "cross-env DISABLE_ESLINT_PLUGIN=true NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "start": "cross-env DISABLE_ESLINT_PLUGIN=true NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
